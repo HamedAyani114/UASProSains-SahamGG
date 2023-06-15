@@ -105,9 +105,9 @@ with tab4:
         pca = pickle.load(open('pca.sav', 'rb'))
 
     with st.form(key="Form4"):
-        input1 = st.number_input("Masukkan Harga Saham (Close) Hari Ini", min_value=0)
-        input2 = st.number_input("Masukkan Harga Saham (Close) Kemarin", min_value=0)
-        input3 = st.number_input("Masukkan Harga Saham (Close) Kemarin Lusa", min_value=0)
+        input1 = st.number_input("Masukkan Harga Saham (Open) Hari Ini", min_value=0)
+        input2 = st.number_input("Masukkan Harga Saham (Open) Kemarin", min_value=0)
+        input3 = st.number_input("Masukkan Harga Saham (Open) Kemarin Lusa", min_value=0)
 
         int1 = int(input1)
         int2 = int(input2)
@@ -130,4 +130,4 @@ with tab4:
         # predict new data
         y_pred=knn.predict(input_pca)
 
-        st.write("Prediksi Harga Saham (Close) Besok: ", y_pred[0])
+        st.write("Prediksi Harga Saham (Open) Besok: ", y_pred[0])
